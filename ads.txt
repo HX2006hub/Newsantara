@@ -19,3 +19,4 @@ google.com, pub-2441454515104767, RESELLER, f08c47fec0942fa0
 google.com, pub-2441454515104767, DIRECT, f08c47fec0942fa0
 adform.com, 3448, RESELLER, 9f5210a2f0999e32
 multibrain.tech, 96817, DIRECT
+google.com, pub-8665305895051673, DIRECT, f08c47fec0942fa0
