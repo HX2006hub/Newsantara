@@ -1,11 +1,11 @@
-﻿(function (w) {
+(function (w) {
   "use strict";
 
   w.NEWSANTARA_ADS_CONFIG = {
     enabled: true,
 
     // ===== 全局平台参数 =====
-    gamNetworkCode: "REPLACE_GAM_NETWORK_CODE",
+    gamNetworkCode: "22170096573",
     adsenseClient: "ca-pub-REPLACE_CLIENT_ID",
 
     // ===== 广告位配置 =====
@@ -13,9 +13,9 @@
     placements: {
       "home-banner-mid-1": {
         enabled: true,
-        network: "off",
-        gamPath: "/REPLACE_GAM_NETWORK_CODE/Newsantara/home-banner-1",
-        sizes: [[300, 250], [336, 280], [728, 90], [320, 100]],
+        network: "gam",
+        gamPath: "/22170096573/hc1.newsantara_home_banner_top",
+        sizes: [[300, 250]],
         adsenseSlot: "REPLACE_ADSENSE_SLOT_1",
         mgidSiteId: "REPLACE_MGID_SITE_ID",
         mgidWidgetId: "REPLACE_MGID_WIDGET_1"
