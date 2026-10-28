@@ -1,35 +1,47 @@
-(function (w) {
+﻿(function (w) {
   "use strict";
 
   w.NEWSANTARA_ADS_CONFIG = {
     enabled: true,
 
-    // Google Ad Manager GPT 标准配置
-    // 获取真实 Network Code 后替换占位符
+    // GAM Network Code：确认后台真实编号后替换
     gamNetworkCode: "REPLACE_GAM_NETWORK_CODE",
 
-    // 未配置真实参数前，所有广告位保持关闭
+    // AdSense Client ID：确认后替换
+    adsenseClient: "ca-pub-REPLACE_CLIENT_ID",
+
     placements: {
       "home-banner-mid-1": {
+        enabled: true,
         network: "off",
         gamPath: "/REPLACE_GAM_NETWORK_CODE/Newsantara/home-banner-1",
-        sizes: [[300, 250], [336, 280], [728, 90], [320, 100]]
+        adsenseSlot: "REPLACE_ADSENSE_SLOT_1",
+        mgidSiteId: "REPLACE_MGID_SITE_ID",
+        mgidWidgetId: "REPLACE_MGID_WIDGET_1"
       },
       "home-banner-mid-2": {
+        enabled: true,
         network: "off",
         gamPath: "/REPLACE_GAM_NETWORK_CODE/Newsantara/home-banner-2",
-        sizes: [[300, 250], [336, 280], [728, 90], [320, 100]]
+        adsenseSlot: "REPLACE_ADSENSE_SLOT_2",
+        mgidSiteId: "REPLACE_MGID_SITE_ID",
+        mgidWidgetId: "REPLACE_MGID_WIDGET_2"
       },
       "article-banner-top": {
+        enabled: true,
         network: "off",
         gamPath: "/REPLACE_GAM_NETWORK_CODE/Newsantara/article-banner-1",
-        sizes: [[300, 250], [336, 280], [728, 90], [320, 100]]
+        adsenseSlot: "REPLACE_ADSENSE_SLOT_3",
+        mgidSiteId: "REPLACE_MGID_SITE_ID",
+        mgidWidgetId: "REPLACE_MGID_WIDGET_3"
       },
       "site-anchor": {
+        enabled: true,
         network: "off",
         gamPath: "/REPLACE_GAM_NETWORK_CODE/Newsantara/anchor"
       },
       "site-interstitial": {
+        enabled: true,
         network: "off",
         gamPath: "/REPLACE_GAM_NETWORK_CODE/Newsantara/interstitial"
       }
