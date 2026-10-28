@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Category | NextPixel</title>
+    <meta name="description" id="metaDesc" content="Technology category from NextPixel.">
+    <link rel="canonical" id="canonicalUrl" href="https://tech.nextpixel.site/">
+    <!-- OG -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" id="ogTitle" content="">
+    <meta property="og:description" id="ogDesc" content="">
+    <meta property="og:url" id="ogUrl" content="">
+    <meta property="og:site_name" content="NextPixel">
+    <meta property="og:image" id="ogImage" content="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=630&fit=crop">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" id="twTitle" content="">
+    <meta name="twitter:description" id="twDesc" content="">
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    <!-- Config -->
+    <script src="site-config.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- JSON-LD Breadcrumb -->
+    <script type="application/ld+json" id="jsonldBreadcrumb">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Technology","item":"https://tech.nextpixel.site/"}]}
+    </script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script src="/assets/nextpixel-ga4-config.js"></script>
+    <script src="/assets/nextpixel-ga4.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="tech-header" id="siteHeader">
+        <div class="header-inner">
+            <a href="/" class="tech-logo"><img src="/logo.svg" alt="NextPixel">
+            </a>
+            <nav class="tech-nav" id="mainNav">
+                <a href="/ai/">AI</a>
+                <a href="/software/">Software</a>
+                <a href="/cybersecurity/">Cybersecurity</a>
+                <a href="/gadgets/">Gadgets</a>
+                <a href="/developer/">Developer</a>
+                <a href="/future-tech/">Future Tech</a>
+            </nav>
+            <div class="header-actions">
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Category Hero -->
+    <section class="cat-hero">
+        <div class="cat-hero-inner">
+            <nav class="tech-breadcrumb">
+                <a href="/">Technology</a> &rsaquo; <span id="breadcrumbCat">Category</span>
+            </nav>
+            <h1 id="catTitle">Category</h1>
+            <p id="catDesc">Description</p>
+        </div>
+    </section>
+
+    <!-- Ad: native-top -->
+    <div class="ad-placement-wrap"><div class="ad-slot" id="ad-native-top" data-ad-slot="native-top"></div></div>
+
+    <!-- Article Grid -->
+    <section class="cat-grid-section">
+        <div class="container">
+            <div class="cat-grid" id="articleGrid">
+                <div class="loading">Loading articles...</div>
+            </div>
+            <div class="cat-pagination" id="pagination"></div>
+        </div>
+    </section>
+
+    <!-- Ad: banner-bottom -->
+    <div class="ad-placement-wrap"><div class="ad-slot" id="ad-banner-bottom" data-ad-slot="banner-bottom"></div></div>
+
+    <!-- Explore Topics -->
+    <section class="explore-section">
+        <div class="container">
+            <h2>Explore Other Topics</h2>
+            <div class="topics-grid" id="topicsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="tech-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <strong>NextPixel</strong>
+                <p>Editorial-grade technology coverage for the digital world.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Topics</h4>
+                <ul id="footerTopics"></ul>
+            </div>
+            <div class="footer-col">
+                <h4>More</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="https://tech.nextpixel.site" target="_blank">NextPixel Main</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>About</h4>
+                <ul><li><a href="about.html">About Us</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="contact.html">Contact</a></li></ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><span class="dynamic-year"></span> NextPixel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Ads -->
+<script src="ads-placements.js"></script>
+    <script src="ads-config.js"></script>
+    <script src="ads.js"></script>
+
+    <script>
+    (function() {
+        'use strict';
+
+        // Detect category from URL path
+        function preserveSubId(url) {
+            var params = new URLSearchParams(window.location.search);
+            var subId = (params.get('sub_id') || params.get('SUB_ID') || '').trim();
+
+            if (!subId || subId === '000' || !/^[A-Za-z0-9_-]{1,32}$/.test(subId)) {
+                return url;
+            }
+
+            var target = new URL(url, window.location.origin);
+            target.searchParams.set('sub_id', subId);
+            return target.pathname + target.search + target.hash;
+        }
+        function buildArticleUrl(id) {
+            var params = new URLSearchParams(window.location.search);
+            var url = '/article.html?id=' + encodeURIComponent(id);
+            var subId = (params.get('sub_id') || params.get('SUB_ID') || '').trim();
+
+            if (subId && subId !== '000' && /^[A-Za-z0-9_-]{1,32}$/.test(subId)) {
+                url += '&sub_id=' + encodeURIComponent(subId);
+            }
+            return url;
+        }
+
+        document.addEventListener('click', function(event) {
+            var params = new URLSearchParams(window.location.search);
+            if (!params.has('details')) return;
+            if (!event.target || !event.target.closest) return;
+
+            var link = event.target.closest('a[href]');
+            if (!link) return;
+
+            var targetUrl = new URL(link.href, window.location.href);
+            if (!/\/article\.html$/.test(targetUrl.pathname) ||
+                !targetUrl.searchParams.has('id')) return;
+
+            if (!Array.isArray(allArticles) || allArticles.length === 0) return;
+
+            var candidates = allArticles.filter(function(article) {
+                return article && article.id != null;
+            });
+            if (candidates.length === 0) return;
+
+            event.preventDefault();
+
+            var chosen = candidates[Math.floor(Math.random() * candidates.length)];
+            var destination = '/article.html?id=' + encodeURIComponent(chosen.id);
+            var subId = (params.get('sub_id') || params.get('SUB_ID') || '').trim();
+
+            if (subId && subId !== '000' && /^[A-Za-z0-9_-]{1,32}$/.test(subId)) {
+                destination += '&sub_id=' + encodeURIComponent(subId);
+            }
+
+            window.location.href = destination;
+        }, true);
+
+
+        function detectCategory() {
+            var path = window.location.pathname.replace(/\/+$/, '');
+            var segments = path.split('/').filter(Boolean);
+            var catId = segments[segments.length - 1] || '';
+            if (!catId) {
+                var params = new URLSearchParams(window.location.search);
+                catId = params.get('cat') || '';
+            }
+            return catId;
+        }
+
+        var currentCatId = detectCategory();
+        var catConfig = null;
+        var allArticles = [];
+        var filteredArticles = [];
+        var perPage = 9;
+        var currentPage = 1;
+
+        if (typeof SITE_CONFIG !== 'undefined') {
+            catConfig = SITE_CONFIG.subcategories.find(function(s) { return s.id === currentCatId; });
+        }
+
+        if (!catConfig) {
+            window.location.href = '/';
+            return;
+        }
+
+        var base = 'https://tech.nextpixel.site';
+        var catUrl = base + '/' + currentCatId + '/';
+        var pageTitleText = catConfig.name + ' 鈥? + SITE_CONFIG.siteName + ' | NextPixel';
+        var pageDesc = catConfig.desc + ' Expert analysis and news from the NextPixel editorial team.';
+
+        document.title = pageTitleText;
+        document.getElementById('metaDesc').setAttribute('content', pageDesc);
+        document.getElementById('canonicalUrl').setAttribute('href', catUrl);
+        document.getElementById('ogTitle').setAttribute('content', pageTitleText);
+        document.getElementById('ogDesc').setAttribute('content', pageDesc);
+        document.getElementById('ogUrl').setAttribute('content', catUrl);
+        document.getElementById('twTitle').setAttribute('content', pageTitleText);
+        document.getElementById('twDesc').setAttribute('content', pageDesc);
+
+        document.getElementById('catTitle').textContent = catConfig.name;
+        document.getElementById('catDesc').textContent = catConfig.desc;
+        document.getElementById('breadcrumbCat').textContent = catConfig.name;
+
+        // JSON-LD
+        var bcl = {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Technology", "item": base + "/" },
+                { "@type": "ListItem", "position": 2, "name": catConfig.name, "item": catUrl }
+            ]
+        };
+        document.getElementById('jsonldBreadcrumb').textContent = JSON.stringify(bcl);
+
+        // Load articles
+        var jsonFile = (typeof SITE_CONFIG !== 'undefined') ? SITE_CONFIG.jsonFile : 'technology-index.json';
+        fetch(jsonFile, { cache: 'no-cache' })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                allArticles = data.articles || [];
+                filteredArticles = allArticles.filter(function(a) { return a.subcategory === currentCatId; });
+                filteredArticles.sort(function(a, b) { return new Date(b.date) - new Date(a.date); });
+
+                if (filteredArticles.length === 0) {
+                    document.getElementById('articleGrid').innerHTML = '<p class="no-articles">No articles found in this category yet.</p>';
+                    return;
+                }
+                renderPage(1);
+                renderPagination();
+            })
+            .catch(function(err) {
+                console.error('Load error:', err);
+                document.getElementById('articleGrid').innerHTML = '<p class="no-articles">Failed to load articles.</p>';
+            });
+
+        function renderPage(page) {
+            currentPage = page;
+            var start = (page - 1) * perPage;
+            var end = Math.min(start + perPage, filteredArticles.length);
+            var items = filteredArticles.slice(start, end);
+
+            var html = '';
+            items.forEach(function(art) {
+                var imgUrl = art.image || SITE_CONFIG.fallbackImage;
+                html += '<article class="cat-card">' +
+                    '<a href="' + buildArticleUrl(art.id) + '">' +
+                    '<img src="' + imgUrl + '" alt="' + esc(art.title) + '" loading="lazy" decoding="async" width="480" height="270">' +
+                    '<div class="cat-card-body">' +
+                    '<h2>' + esc(art.title) + '</h2>' +
+                    '<p>' + esc(art.excerpt || '') + '</p>' +
+                    '<time>' + fmtDate(art.date) + '</time>' +
+                    '</div></a></article>';
+            });
+            document.getElementById('articleGrid').innerHTML = html;
+        }
+
+        function renderPagination() {
+            var totalPages = Math.ceil(filteredArticles.length / perPage);
+            if (totalPages <= 1) { document.getElementById('pagination').innerHTML = ''; return; }
+            var html = '';
+            html += '<button ' + (currentPage <= 1 ? 'disabled' : '') + ' onclick="window.__catPage(' + (currentPage - 1) + ')">&laquo; Prev</button>';
+            for (var i = 1; i <= totalPages; i++) {
+                if (totalPages > 7 && i !== 1 && i !== totalPages && (i < currentPage - 1 || i > currentPage + 1)) {
+                    if (i === currentPage - 2 || i === currentPage + 2) html += '<span class="page-ellipsis">&hellip;</span>';
+                    continue;
+                }
+                html += '<button class="' + (i === currentPage ? 'active' : '') + '" onclick="window.__catPage(' + i + ')">' + i + '</button>';
+            }
+            html += '<button ' + (currentPage >= totalPages ? 'disabled' : '') + ' onclick="window.__catPage(' + (currentPage + 1) + ')">Next &raquo;</button>';
+            document.getElementById('pagination').innerHTML = html;
+        }
+
+        window.__catPage = function(page) {
+            var totalPages = Math.ceil(filteredArticles.length / perPage);
+            if (page < 1 || page > totalPages) return;
+            renderPage(page);
+            renderPagination();
+            document.getElementById('articleGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        };
+
+        // Explore Topics
+        function renderExplore() {
+            var grid = document.getElementById('topicsGrid');
+            var counts = {};
+            allArticles.forEach(function(a) { counts[a.subcategory] = (counts[a.subcategory] || 0) + 1; });
+            var html = '';
+            SITE_CONFIG.subcategories.forEach(function(sub) {
+                var isCurrent = sub.id === currentCatId;
+                var url = SITE_CONFIG.categoryUrlMap[sub.id] || '/' + sub.id + '/';
+                html += '<a class="topic-card' + (isCurrent ? ' current' : '') + '" href="' + preserveSubId(url) + '">' +
+                    '<div class="topic-name">' + (isCurrent ? '&#10003; ' : '') + esc(sub.name) + '</div>' +
+                    '<div class="topic-count">' + (counts[sub.id] || 0) + ' articles</div>' +
+                    '</a>';
+            });
+            grid.innerHTML = html;
+        }
+
+        function renderFooter() {
+            var ul = document.getElementById('footerTopics');
+            var html = '';
+            SITE_CONFIG.subcategories.forEach(function(sub) {
+                var url = SITE_CONFIG.categoryUrlMap[sub.id] || '/' + sub.id + '/';
+                html += '<li><a href="' + preserveSubId(url) + '">' + esc(sub.name) + '</a></li>';
+            });
+            ul.innerHTML = html;
+        }
+
+        // Mobile menu
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('nav-open');
+        });
+
+        renderExplore();
+        renderFooter();
+
+        function fmtDate(d) { try { return new Date(d).toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'}); } catch(e) { return d; } }
+        function esc(s) { if (!s) return ''; var d = document.createElement('div'); d.appendChild(document.createTextNode(s)); return d.innerHTML; }
+    })();
+    </script>
+<script>
+(function () {
+    var now = new Date();
+    var year = now.getFullYear();
+    var dateText = now.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long'
+    });
+
+    document.querySelectorAll('.dynamic-year').forEach(function (el) {
+        el.textContent = '漏 ' + year;
+    });
+
+    document.querySelectorAll('.dynamic-date').forEach(function (el) {
+        el.textContent = dateText;
+    });
+})();
+</script>
+</body>
+</html>

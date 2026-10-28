@@ -1,0 +1,5 @@
+{
+  "_comment": "Add original editorial opinions here. Each entry maps to an article ID. 'note' appears as an Editor's Note callout before the article body. 'additionalContent' (HTML allowed) appears after the article as 'Our Take'. This is where you inject original perspectives to meet AdSense content requirements.",
+  "_usage": "Fill in entries for articles where you want to add original commentary. Leave the file as-is with an empty articles array if no opinions yet. Example: {\"articles\": [{\"id\": 98351, \"note\": \"<p>Our editorial view on this topic...</p>\", \"additionalContent\": \"<p>Additional original paragraphs...</p>\"}]}",
+  "articles": []
+}

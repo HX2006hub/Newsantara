@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | NextPixel</title>
+    <meta name="description" content="About NextPixel 閳?editorial-grade coverage of AI, software, cybersecurity, gadgets and emerging technology.">
+    <link rel="canonical" href="https://tech.nextpixel.site/about.html">
+    <script src="site-config.js"></script>
+    <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script src="/assets/nextpixel-ga4-config.js"></script>
+    <script src="/assets/nextpixel-ga4.js"></script>
+</head>
+<body>
+    <header class="tech-header">
+        <div class="header-inner">
+            <a href="/" class="tech-logo"><img src="/logo.svg" alt="NextPixel">
+            </a>
+            <nav class="tech-nav" id="mainNav">
+                <a href="index.html?cat=ai">AI</a>
+                <a href="index.html?cat=software">Software</a>
+                <a href="index.html?cat=cybersecurity">Cybersecurity</a>
+                <a href="index.html?cat=gadgets">Gadgets</a>
+                <a href="index.html?cat=developer">Developer</a>
+                <a href="index.html?cat=future-tech">Future Tech</a>
+            </nav>
+            <div class="header-actions">
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <article class="tech-article static-page">
+        <div class="article-content-wrap">
+            <h1>About NextPixel</h1>
+
+            <p>NextPixel is an independent technology publication covering artificial intelligence, software, cybersecurity, consumer gadgets, developer tools, and the innovations shaping the next decade.</p>
+
+            <p>We launched with a simple premise: technology coverage should be substantive, not promotional. Every article we publish is written to help readers understand what a development actually does, who it affects, and why it matters &mdash; without the hype cycles that dominate much of the tech press.</p>
+
+            <h2>What We Cover</h2>
+            <p>Our editorial focus spans six core areas:</p>
+            <ul>
+                <li><strong>Artificial Intelligence</strong> &mdash; model releases, enterprise adoption, AI safety, and the commercial landscape.</li>
+                <li><strong>Software &amp; Apps</strong> &mdash; platforms, developer tools, SaaS trends, and the software economy.</li>
+                <li><strong>Cybersecurity</strong> &mdash; threats, defenses, regulation, and the evolving security landscape.</li>
+                <li><strong>Gadgets</strong> &mdash; consumer hardware, wearables, smart home devices, and product reviews.</li>
+                <li><strong>Developer Technology</strong> &mdash; infrastructure, edge computing, 5G, and the tools builders rely on.</li>
+                <li><strong>Future Technology</strong> &mdash; quantum computing, robotics, blockchain, and emerging research.</li>
+            </ul>
+
+            <h2>Our Editorial Approach</h2>
+            <p>We combine reported analysis with clear, accessible writing. Our team draws on industry data, primary sources, and hands-on experience to produce articles that are accurate and useful. We do not accept payment for positive coverage, and we clearly distinguish between reported facts and editorial opinion.</p>
+
+            <p>When we express a view, we label it as such &mdash; in Editor's Notes and Our Take sections &mdash; so readers always know where reporting ends and perspective begins.</p>
+
+            <h2>Editorial Standards</h2>
+            <p>Accuracy matters to us. If you believe we have published an error, please contact us and we will investigate promptly and correct where appropriate.</p>
+
+
+            <div class="back-home" style="margin-top:40px;">
+                <a href="/">&larr; Back to Technology</a>
+            </div>
+        </div>
+    </article>
+
+    <footer class="tech-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <strong>NextPixel</strong>
+                <p>Editorial-grade technology coverage for the digital world.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Topics</h4>
+                <ul id="footerTopics"></ul>
+            </div>
+            <div class="footer-col">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><span class="dynamic-year"></span> NextPixel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+(function () {
+    var ul = document.getElementById('footerTopics');
+    var cfg = window.SITE_CONFIG;
+
+    if (ul) {
+        var topics = cfg && Array.isArray(cfg.subcategories) ? cfg.subcategories : [];
+        var fallbackTopics = [
+            { id: 'ai', name: 'Artificial Intelligence' },
+            { id: 'software', name: 'Software & Apps' },
+            { id: 'cybersecurity', name: 'Cybersecurity' },
+            { id: 'gadgets', name: 'Gadgets' },
+            { id: 'developer', name: 'Developer Technology' },
+            { id: 'future-tech', name: 'Future Technology' }
+        ];
+
+        if (!topics.length) topics = fallbackTopics;
+
+        ul.innerHTML = topics.map(function (sub) {
+            var id = String(sub.id || '');
+            var name = String(sub.name || id);
+            var url = 'index.html?cat=' + encodeURIComponent(id);
+            return '<li><a href="' + url + '">' + name + '</a></li>';
+        }).join('');
+    }
+
+    var toggle = document.getElementById('menuToggle');
+    var nav = document.getElementById('mainNav');
+    if (toggle && nav) {
+        toggle.addEventListener('click', function () {
+            nav.classList.toggle('nav-open');
+        });
+    }
+})();
+</script>
+<script>
+(function () {
+    var now = new Date();
+    var year = now.getFullYear();
+    var dateText = now.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long'
+    });
+
+    document.querySelectorAll('.dynamic-year').forEach(function (el) {
+        el.innerHTML = '&copy; ' + year;
+    });
+
+    document.querySelectorAll('.dynamic-date').forEach(function (el) {
+        el.textContent = dateText;
+    });
+})();
+</script>
+</body>
+</html>
+
+

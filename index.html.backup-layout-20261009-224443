@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology Insights on AI, Software, Cybersecurity & Gadgets | NextPixel</title>
+    <meta name="description" content="Explore the latest in AI, software, cybersecurity, gadgets, developer tools and emerging technology from NextPixel.">
+    <link rel="canonical" href="https://tech.nextpixel.site/">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Technology Insights on AI, Software, Cybersecurity & Gadgets | NextPixel">
+    <meta property="og:description" content="Explore the latest in AI, software, cybersecurity, gadgets, developer tools and emerging technology from NextPixel.">
+    <meta property="og:url" content="https://tech.nextpixel.site/">
+    <meta property="og:site_name" content="NextPixel">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=630&fit=crop">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Technology Insights on AI, Software, Cybersecurity & Gadgets | NextPixel">
+    <meta name="twitter:description" content="Explore the latest in AI, software, cybersecurity, gadgets, developer tools and emerging technology from NextPixel.">
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    <!-- Config -->
+    <script src="site-config.js"></script>
+<script>
+(function () {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('cat')) {
+        document.documentElement.classList.add('category-view');
+    }
+})();
+</script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- JSON-LD: WebSite -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "NextPixel",
+        "url": "https://tech.nextpixel.site/",
+        "description": "Explore the latest in AI, software, cybersecurity, gadgets, developer tools and emerging technology.",
+        "publisher": { "@type": "Organization", "name": "NextPixel" }
+    }
+    </script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script src="/assets/nextpixel-ga4-config.js"></script>
+    <script src="/assets/nextpixel-ga4.js"></script>
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header class="tech-header" id="siteHeader">
+        <div class="header-inner">
+            <a href="/" class="tech-logo"><img src="/logo.svg" alt="NextPixel">
+            </a>
+            <nav class="tech-nav" id="mainNav">
+                <a href="index.html?cat=ai">AI</a>
+                <a href="index.html?cat=software">Software</a>
+                <a href="index.html?cat=cybersecurity">Cybersecurity</a>
+                <a href="index.html?cat=gadgets">Gadgets</a>
+                <a href="index.html?cat=developer">Developer</a>
+                <a href="index.html?cat=future-tech">Future Tech</a>
+            </nav>
+            <div class="header-actions">
+                <div class="header-search">
+                    <input type="text" id="searchInput" placeholder="Search articles..." aria-label="Search articles">
+                    <button id="searchBtn" aria-label="Search">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                    </button>
+                </div>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="tech-hero">
+        <div class="hero-content">
+            <h1 id="heroTitle">Technology Insights<br>for the Digital World</h1>
+            <p id="heroDesc">Explore the latest breakthroughs in AI, software, cybersecurity, and digital innovation.</p>
+            <a href="#latest" class="hero-cta" id="heroCta">Explore Technology Topics</a>
+        </div>
+        <div class="hero-grid-bg"></div>
+    </section>
+
+    <!-- ===== EDITORIAL INTRO ===== -->
+    <section class="editorial-intro">
+        <div class="container">
+            <h2 class="section-eyebrow">Our Perspective</h2>
+            <div class="editorial-text" id="editorialText"></div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURED STORIES ===== -->
+    <section class="featured-section">
+        <div class="container">
+            <h2 class="section-title" id="featuredTitle">Featured Technology Stories</h2>
+            <div class="featured-grid" id="featuredGrid"></div>
+        </div>
+    </section>
+
+    <!-- ===== AD: Banner Mid 1 ===== -->
+    <div class="ad-slot" id="ad-banner-mid-1" data-ad-slot="banner-mid-1"></div>
+
+    <!-- ===== LATEST TECHNOLOGY ===== -->
+    <section class="latest-section" id="latest">
+        <div class="container">
+            <h2 class="section-title" id="latestTitle">Latest Technology</h2>
+            <div class="latest-list" id="latestList"></div>
+            <button class="load-more-btn" id="loadMoreBtn" style="display:none">Load More Stories</button>
+        </div>
+    </section>
+
+    <!-- ===== AD: Banner Mid 2 ===== -->
+    <div class="ad-slot" id="ad-banner-mid-2" data-ad-slot="banner-mid-2"></div>
+
+    <!-- ===== CATEGORY SECTIONS ===== -->
+    <div id="categorySections"></div>
+
+    <!-- ===== MOST READ ===== -->
+    <section class="most-read-section">
+        <div class="container">
+            <h2 class="section-title">Most Read</h2>
+            <ol class="most-read-list" id="mostReadList"></ol>
+        </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-inner">
+                <h2>Stay Ahead of the Curve</h2>
+                <p>Get the week's most important technology stories delivered to your inbox every Friday.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you! You\'ll receive our next digest.');">
+                    <input type="email" placeholder="info@nextpixel.site" required aria-label="Email address">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== AD: Banner Bottom ===== -->
+    <div class="ad-slot" id="ad-banner-bottom" data-ad-slot="banner-bottom"></div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="tech-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <strong>NextPixel</strong>
+                <p>Editorial-grade technology coverage for the digital world. We analyze what matters, who it affects, and where it's heading.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Topics</h4>
+                <ul id="footerTopics"></ul>
+            </div>
+            <div class="footer-col">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><span class="dynamic-year"></span> NextPixel. All rights reserved.</p>
+            <a href="about.html">About</a>
+            <a href="privacy.html">Privacy</a>
+        </div>
+    </footer>
+
+    <!-- Ads -->
+<script src="ads-placements.js"></script>
+    <script src="ads-config.js"></script>
+    <script src="ads.js"></script>
+
+    <script>
+    (function() {
+        'use strict';
+        var allArticles = [];
+        var filteredArticles = [];
+        var usedIds = {};
+        var latestShown = 0;
+        var latestPerBatch = 8;
+        var currentCat = '';
+
+        var params = new URLSearchParams(window.location.search);
+        currentCat = params.get('cat') || '';
+
+        // Set the category HERO before asynchronous article data loads.
+        if (currentCat && typeof SITE_CONFIG !== 'undefined') {
+            var earlyCat = SITE_CONFIG.subcategories.find(function (sub) {
+                return sub.id === currentCat;
+            });
+            if (earlyCat) {
+                document.getElementById('heroTitle').textContent = earlyCat.name;
+                document.getElementById('heroDesc').textContent = earlyCat.desc;
+                var earlyCta = document.getElementById('heroCta');
+                earlyCta.textContent = 'Browse ' + earlyCat.name;
+                earlyCta.href = '#latest';
+            }
+        }
+        document.documentElement.classList.add('category-ready');
+
+        function buildCategoryUrl(catId) {
+            var url = 'index.html?cat=' + encodeURIComponent(catId);
+            var params = new URLSearchParams(window.location.search);
+            var subId = (params.get('sub_id') || params.get('SUB_ID') || '').trim();
+            if (subId && subId !== '000' && /^[A-Za-z0-9_-]{1,32}$/.test(subId)) {
+                url += '&sub_id=' + encodeURIComponent(subId);
+            }
+            return url;
+        }
+
+        document.querySelectorAll('#mainNav a[href*="index.html?cat="]').forEach(function(link) {
+            link.addEventListener('click', function(event) {
+                var match = link.getAttribute('href').match(/[?&]cat=([^&]+)/);
+                if (match) {
+                    event.preventDefault();
+                    window.location.href = buildCategoryUrl(decodeURIComponent(match[1]));
+                }
+            });
+        });
+        function buildArticleUrl(id) {
+            var url = '/article.html?id=' + encodeURIComponent(id);
+            var params = new URLSearchParams(window.location.search);
+            var subId = (params.get('sub_id') || params.get('SUB_ID') || '').trim();
+
+            if (subId && subId !== '000' && /^[A-Za-z0-9_-]{1,32}$/.test(subId)) {
+                url += '&sub_id=' + encodeURIComponent(subId);
+            }
+            return url;
+        }
+        function markUsed(id) { usedIds[id] = true; }
+        function isUsed(id) { return !!usedIds[id]; }
+
+        if (currentCat) {
+            var navLinks = document.querySelectorAll('#mainNav a');
+            navLinks.forEach(function(link) {
+                if (link.getAttribute('href') === 'index.html?cat=' + currentCat) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        var jsonFile = (typeof SITE_CONFIG !== 'undefined') ? SITE_CONFIG.jsonFile : 'technology-index.json';
+        fetch(jsonFile, { cache: 'no-cache' })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                allArticles = data.articles || [];
+                allArticles.sort(function(a, b) { return new Date(b.date) - new Date(a.date); });
+
+                if (currentCat) {
+                    filteredArticles = allArticles.filter(function(a) { return a.subcategory === currentCat; });
+                    var catInfo = null;
+                    if (typeof SITE_CONFIG !== 'undefined') {
+                        SITE_CONFIG.subcategories.forEach(function(sub) {
+                            if (sub.id === currentCat) catInfo = sub;
+                        });
+                    }
+                    if (catInfo) {
+                        document.title = catInfo.name + ' - NextPixel';
+                        var metaDesc = document.querySelector('meta[name="description"]');
+                        if (metaDesc) metaDesc.setAttribute('content', catInfo.desc);
+                        var heroTitle = document.getElementById('heroTitle');
+                        var heroDesc = document.getElementById('heroDesc');
+                        var heroCta = document.getElementById('heroCta');
+                        if (heroTitle) heroTitle.textContent = catInfo.name;
+                        if (heroDesc) heroDesc.textContent = catInfo.desc;
+                        if (heroCta) { heroCta.textContent = 'Browse ' + catInfo.name; heroCta.href = '#latest'; }
+                        var latestTitle = document.getElementById('latestTitle');
+                        if (latestTitle) latestTitle.textContent = 'Latest ' + catInfo.name;
+                        var featuredTitle = document.getElementById('featuredTitle');
+                        if (featuredTitle) featuredTitle.textContent = 'Featured ' + catInfo.name;
+                    }
+                } else {
+                    filteredArticles = allArticles;
+                }
+
+                renderEditorial();
+                renderFeatured();
+                renderLatest(true);
+                if (!currentCat) {
+                    renderCategorySections();
+                } else {
+                    var catSections = document.getElementById('categorySections');
+                    if (catSections) catSections.style.display = 'none';
+                }
+                renderMostRead();
+                renderFooterTopics();
+                initSearch();
+            })
+            .catch(function(err) { console.error('Failed to load index:', err); });
+
+        function renderEditorial() {
+            var el = document.getElementById('editorialText');
+            if (!el || typeof SITE_CONFIG === 'undefined') return;
+
+            var intro = SITE_CONFIG.heroIntro;
+            if (currentCat && SITE_CONFIG.categoryEditorial &&
+                SITE_CONFIG.categoryEditorial[currentCat]) {
+                intro = SITE_CONFIG.categoryEditorial[currentCat];
+            }
+            el.innerHTML = intro;
+        }
+
+        function renderFeatured() {
+            var grid = document.getElementById('featuredGrid');
+            var featured = filteredArticles.filter(function(a) { return a.featured; });
+            if (featured.length === 0) featured = filteredArticles.slice(0, 4);
+            var html = '';
+            featured.forEach(function(art, i) {
+                markUsed(art.id);
+                var imgUrl = art.image || SITE_CONFIG.fallbackImage;
+                imgUrl = imgUrl.replace(/w=\d+/, 'w=800').replace(/h=\d+/, 'h=450');
+                var cls = i === 0 ? 'featured-main' : 'featured-side';
+                html += '<article class="featured-card ' + cls + '">' +
+                    '<a href="' + buildArticleUrl(art.id) + '">' +
+                    '<img src="' + imgUrl + '" alt="' + esc(art.title) + '" loading="lazy" decoding="async" width="640" height="360" onerror="this.onerror=null;this.src=SITE_CONFIG.fallbackImage;">' +
+                    '<span class="featured-cat">' + esc(art.category) + '</span>' +
+                    '<h3>' + esc(art.title) + '</h3>' +
+                    '<p>' + esc(art.excerpt || '') + '</p>' +
+                    '<time>' + fmtDate(art.date) + '</time>' +
+                    '</a></article>';
+            });
+            grid.innerHTML = html;
+        }
+
+        function renderLatest(reset) {
+            var list = document.getElementById('latestList');
+            var btn = document.getElementById('loadMoreBtn');
+            if (reset) { latestShown = 0; list.innerHTML = ''; }
+            var remaining = filteredArticles.filter(function(a) { return !isUsed(a.id); });
+            var batch = remaining.slice(latestShown, latestShown + latestPerBatch);
+            if (batch.length === 0) { btn.style.display = 'none'; return; }
+            var html = '';
+            batch.forEach(function(art) {
+                markUsed(art.id);
+                latestShown++;
+                var imgUrl = art.image || SITE_CONFIG.fallbackImage;
+                imgUrl = imgUrl.replace(/w=\d+/, 'w=400').replace(/h=\d+/, 'h=225');
+                html += '<article class="latest-card">' +
+                    '<a href="' + buildArticleUrl(art.id) + '" class="latest-img">' +
+                    '<img src="' + imgUrl + '" alt="' + esc(art.title) + '" loading="lazy" decoding="async" width="400" height="225" onerror="this.onerror=null;this.src=SITE_CONFIG.fallbackImage;">' +
+                    '</a>' +
+                    '<div class="latest-card-body">' +
+                    '<span class="latest-cat">' + esc(art.category) + '</span>' +
+                    '<h3><a href="' + buildArticleUrl(art.id) + '">' + esc(art.title) + '</a></h3>' +
+                    '<p>' + esc(art.excerpt || '') + '</p>' +
+                    '<time>' + fmtDate(art.date) + '</time>' +
+                    '</div></article>';
+            });
+            list.insertAdjacentHTML('beforeend', html);
+            btn.style.display = remaining.length > latestShown ? '' : 'none';
+        }
+
+        document.getElementById('loadMoreBtn').addEventListener('click', function() {
+            renderLatest(false);
+            var latestSection = document.getElementById('latest');
+            if (latestSection) {
+                latestSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+
+        function renderCategorySections() {
+            var container = document.getElementById('categorySections');
+            var html = '';
+            SITE_CONFIG.subcategories.forEach(function(sub) {
+                var arts = allArticles.filter(function(a) { return a.subcategory === sub.id; }).slice(0, 3);
+                if (arts.length === 0) return;
+                var url = buildCategoryUrl(sub.id);
+                html += '<section class="topic-section"><div class="container">' +
+                    '<div class="topic-header"><h2>' + esc(sub.name) + '</h2><a href="' + url + '" class="view-all">View all &rarr;</a></div>' +
+                    '<div class="topic-grid">';
+                arts.forEach(function(art) {
+                    var imgUrl = art.image || SITE_CONFIG.fallbackImage;
+                    imgUrl = imgUrl.replace(/w=\d+/, 'w=480').replace(/h=\d+/, 'h=270');
+                    html += '<article class="topic-card">' +
+                        '<a href="' + buildArticleUrl(art.id) + '">' +
+                        '<img src="' + imgUrl + '" alt="' + esc(art.title) + '" loading="lazy" decoding="async" width="480" height="270" onerror="this.onerror=null;this.src=SITE_CONFIG.fallbackImage;">' +
+                        '<h3>' + esc(art.title) + '</h3>' +
+                        '<time>' + fmtDate(art.date) + '</time>' +
+                        '</a></article>';
+                });
+                html += '</div></div></section>';
+            });
+            container.innerHTML = html;
+        }
+
+        function renderMostRead() {
+            var list = document.getElementById('mostReadList');
+            var items = filteredArticles.slice(0, 5);
+            var html = '';
+            items.forEach(function(art, i) {
+                html += '<li><a href="' + buildArticleUrl(art.id) + '">' +
+                    '<span class="mr-text">' + esc(art.title) + '</span>' +
+                    '</a></li>';
+            });
+            list.innerHTML = html;
+        }
+
+        function renderFooterTopics() {
+            var ul = document.getElementById('footerTopics');
+            var html = '';
+            SITE_CONFIG.subcategories.forEach(function(sub) {
+                var url = buildCategoryUrl(sub.id);
+                html += '<li><a href="' + url + '">' + esc(sub.name) + '</a></li>';
+            });
+            ul.innerHTML = html;
+        }
+
+        function initSearch() {
+            var input = document.getElementById('searchInput');
+            var btn = document.getElementById('searchBtn');
+            function doSearch() {
+                var q = input.value.toLowerCase().trim();
+                if (!q) return;
+                var results = allArticles.filter(function(a) {
+                    return a.title.toLowerCase().indexOf(q) !== -1 ||
+                           (a.excerpt && a.excerpt.toLowerCase().indexOf(q) !== -1);
+                });
+                if (results.length > 0) {
+                    window.location.href = buildArticleUrl(results[0].id);
+                } else {
+                    input.placeholder = 'No results for "' + input.value + '"';
+                    input.value = '';
+                }
+            }
+            btn.addEventListener('click', doSearch);
+            input.addEventListener('keyup', function(e) {
+                if (e.key === 'Enter') doSearch();
+            });
+        }
+
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('nav-open');
+        });
+
+        function fmtDate(d) { try { return new Date(d).toLocaleDateString('en-US', {year:'numeric',month:'short',day:'numeric'}); } catch(e) { return d; } }
+        function esc(s) { if (!s) return ''; var d = document.createElement('div'); d.appendChild(document.createTextNode(s)); return d.innerHTML; }
+    })();
+    </script>
+<script>
+(function () {
+    var now = new Date();
+    var year = now.getFullYear();
+    var dateText = now.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long'
+    });
+
+    document.querySelectorAll('.dynamic-year').forEach(function (el) {
+        el.innerHTML = '&copy; ' + year;
+    });
+
+    document.querySelectorAll('.dynamic-date').forEach(function (el) {
+        el.textContent = dateText;
+    });
+})();
+</script>
+</body>
+</html>

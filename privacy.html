@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | NextPixel</title>
+    <meta name="description" content="Privacy Policy for NextPixel.">
+    <link rel="canonical" href="https://tech.nextpixel.site/privacy.html">
+    <script src="site-config.js"></script>
+    <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script src="/assets/nextpixel-ga4-config.js"></script>
+    <script src="/assets/nextpixel-ga4.js"></script>
+</head>
+<body>
+    <header class="tech-header">
+        <div class="header-inner">
+            <a href="/" class="tech-logo"><img src="/logo.svg" alt="NextPixel">
+            </a>
+            <nav class="tech-nav" id="mainNav">
+                <a href="index.html?cat=ai">AI</a>
+                <a href="index.html?cat=software">Software</a>
+                <a href="index.html?cat=cybersecurity">Cybersecurity</a>
+                <a href="index.html?cat=gadgets">Gadgets</a>
+                <a href="index.html?cat=developer">Developer</a>
+                <a href="index.html?cat=future-tech">Future Tech</a>
+            </nav>
+            <div class="header-actions">
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <article class="tech-article static-page">
+        <div class="article-content-wrap">
+            <h1>Privacy Policy</h1>
+            <p><em>Last updated: <span class="dynamic-date"></span></em></p>
+
+            <p>NextPixel ("we", "us", or "our") operates nextpixel.site. This page explains how we collect, use, and protect information when you visit our website.</p>
+
+            <h2>Information We Collect</h2>
+            <p>We collect minimal information necessary to operate and improve the site:</p>
+            <ul>
+                <li><strong>Analytics data:</strong> We use privacy-conscious analytics to understand aggregate traffic patterns, such as page views, referring URLs, and approximate geographic region. This data does not identify you individually.</li>
+                <li><strong>Email address (if you subscribe):</strong> If you sign up for our newsletter, we store your email address solely for sending the digest. You can unsubscribe at any time.</li>
+                <li><strong>Log data:</strong> Our hosting provider may record standard server logs (IP address, browser type, pages visited) for security and troubleshooting.</li>
+            </ul>
+
+            <h2>Cookies and Advertising</h2>
+            <p>We may display advertisements through third-party networks, including Google AdSense. These networks may use cookies to serve ads based on your prior visits to this and other websites. You can opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google Ads Settings</a> or <a href="https://www.aboutads.info" target="_blank" rel="noopener">aboutads.info</a>.</p>
+
+            <h2>How We Use Information</h2>
+            <p>We use collected information to:</p>
+            <ul>
+                <li>Operate and maintain the website</li>
+                <li>Analyze traffic to improve content and layout</li>
+                <li>Send newsletter emails (only if you subscribed)</li>
+                <li>Detect and prevent technical issues or abuse</li>
+            </ul>
+
+            <h2>Data Sharing</h2>
+            <p>We do not sell your personal information. We may share anonymized, aggregate data with partners or advertisers. We may disclose information if required by law.</p>
+
+            <h2>Third-Party Links</h2>
+            <p>Our articles may link to external websites. We are not responsible for the privacy practices of those sites. We encourage you to review their privacy policies.</p>
+
+            <h2>Your Rights</h2>
+            <p>Depending on your jurisdiction, you may have the right to access, correct, or delete personal data we hold about you. For any such request, contact us at <a href="mailto:info@nextpixel.site">info@nextpixel.site</a>.</p>
+
+            <h2>Children's Privacy</h2>
+            <p>This site is not directed to children under 13, and we do not knowingly collect personal information from children.</p>
+
+            <h2>Changes to This Policy</h2>
+            <p>We may update this policy from time to time. Changes will be posted on this page with an updated date.</p>
+
+            <h2>Contact</h2>
+            <p>For privacy-related questions, email <a href="mailto:info@nextpixel.site">info@nextpixel.site</a>.</p>
+
+            <div class="back-home" style="margin-top:40px;">
+                <a href="/">&larr; Back to Technology</a>
+            </div>
+        </div>
+    </article>
+
+    <footer class="tech-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <strong>NextPixel</strong>
+                <p>Editorial-grade technology coverage for the digital world.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Topics</h4>
+                <ul id="footerTopics"></ul>
+            </div>
+            <div class="footer-col">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><span class="dynamic-year"></span> NextPixel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    (function() {
+        var ul = document.getElementById('footerTopics');
+        if (typeof SITE_CONFIG !== 'undefined') {
+            var html = '';
+            SITE_CONFIG.subcategories.forEach(function(sub) {
+                var url = SITE_CONFIG.categoryUrlMap[sub.id] || 'index.html?cat=' + sub.id;
+                html += '<li><a href="' + url + '">' + sub.name + '</a></li>';
+            });
+            ul.innerHTML = html;
+        }
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('nav-open');
+        });
+    })();
+    </script>
+<script>
+(function () {
+    var now = new Date();
+    var year = now.getFullYear();
+    var dateText = now.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long'
+    });
+
+    document.querySelectorAll('.dynamic-year').forEach(function (el) {
+        el.innerHTML = '&copy; ' + year;
+    });
+
+    document.querySelectorAll('.dynamic-date').forEach(function (el) {
+        el.textContent = dateText;
+    });
+})();
+</script>
+</body>
+</html>
+
