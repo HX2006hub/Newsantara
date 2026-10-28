@@ -1,34 +1,29 @@
 (function (w) {
   "use strict";
+
   w.NEWSANTARA_ADS_CONFIG = {
     enabled: true,
 
-    // 手动选择每个广告位的 network：gam / adsense / mgid / off
-    // GAM 网络代码与各广告平台参数尚未填写时，不发送广告请求。
+    // Google Ad Manager GPT 标准配置
+    // 获取真实 Network Code 后替换占位符
     gamNetworkCode: "REPLACE_GAM_NETWORK_CODE",
-    adsenseClient: "ca-pub-REPLACE_CLIENT_ID",
 
+    // 未配置真实参数前，所有广告位保持关闭
     placements: {
       "home-banner-mid-1": {
         network: "off",
         gamPath: "/REPLACE_GAM_NETWORK_CODE/Newsantara/home-banner-1",
-        adsenseSlot: "REPLACE_ADSENSE_SLOT_1",
-        mgidSiteId: "REPLACE_MGID_SITE_ID",
-        mgidWidgetId: "REPLACE_MGID_WIDGET_1"
+        sizes: [[300, 250], [336, 280], [728, 90], [320, 100]]
       },
       "home-banner-mid-2": {
         network: "off",
         gamPath: "/REPLACE_GAM_NETWORK_CODE/Newsantara/home-banner-2",
-        adsenseSlot: "REPLACE_ADSENSE_SLOT_2",
-        mgidSiteId: "REPLACE_MGID_SITE_ID",
-        mgidWidgetId: "REPLACE_MGID_WIDGET_2"
+        sizes: [[300, 250], [336, 280], [728, 90], [320, 100]]
       },
       "article-banner-top": {
         network: "off",
         gamPath: "/REPLACE_GAM_NETWORK_CODE/Newsantara/article-banner-1",
-        adsenseSlot: "REPLACE_ADSENSE_SLOT_3",
-        mgidSiteId: "REPLACE_MGID_SITE_ID",
-        mgidWidgetId: "REPLACE_MGID_WIDGET_3"
+        sizes: [[300, 250], [336, 280], [728, 90], [320, 100]]
       },
       "site-anchor": {
         network: "off",
