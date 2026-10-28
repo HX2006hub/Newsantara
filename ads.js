@@ -25,7 +25,7 @@
 
   function pageItems() {
     if (!R) return [];
-    return (R[pageName()] || []).concat(R.global || []);
+    return (R[pageName()] || []).concat(R.global || [], pageName() === "home" ? (R.homeGlobal || []) : []);
   }
 
   function validValue(value) {
@@ -204,7 +204,7 @@
     if (!el || seen.has(el) || !isValid(item)) return;
     if (!gptInitQueued) return;
 
-    // 先标记，避免 MutationObserver 重复排队。
+    // 鍏堟爣璁帮紝閬垮厤 MutationObserver 閲嶅鎺掗槦銆?
     seen.add(el);
     if (!el.id) el.id = "newsantara-gpt-" + item.key;
 
@@ -314,7 +314,7 @@
       return isValid(item) && configFor(item).network === "gam";
     });
 
-    // 未注册的旧容器保留在 HTML 中，但隐藏并清除空白。
+    // 鏈敞鍐岀殑鏃у鍣ㄤ繚鐣欏湪 HTML 涓紝浣嗛殣钘忓苟娓呴櫎绌虹櫧銆?
     d.querySelectorAll("[data-ad-slot]").forEach(function (el) {
       var item = items.find(function (candidate) {
         return candidate.selector && el.matches(candidate.selector);
