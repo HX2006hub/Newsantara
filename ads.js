@@ -371,11 +371,7 @@
   }
 
   function boot() {
-    if (d.readyState === "loading") {
-      d.addEventListener("DOMContentLoaded", init, { once: true });
-    } else {
-      init();
-    }
+    init();
   }
 
   boot();
