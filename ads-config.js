@@ -2,7 +2,7 @@
   "use strict";
 
   w.NEWSANTARA_ADS_CONFIG = {
-    enabled: true,
+    enabled: false,
 
     // ===== 閸忋劌鐪獮鍐插酱閸欏倹鏆?=====
     gamNetworkCode: "22170096573",
