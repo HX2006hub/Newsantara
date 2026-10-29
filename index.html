@@ -237,7 +237,7 @@
             });
         }
 
-        var jsonFile = 'homepage-articles.json';
+        var jsonFile = (typeof SITE_CONFIG !== 'undefined') ? SITE_CONFIG.jsonFile : 'technology-index.json';
         fetch(jsonFile, { cache: 'no-cache' })
             .then(function(r) { return r.json(); })
             .then(function(data) {
