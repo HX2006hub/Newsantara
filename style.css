@@ -316,7 +316,7 @@ body {
 .newsletter-form button:hover { background: var(--accent-hover); }
 
 /* ========== Ad Slots ========== */
-.ad-slot { margin: 16px auto; text-align: center; min-height: 0; overflow: hidden; transition: all 0.3s ease; }
+.ad-slot { margin: 16px auto; text-align: center; min-height: 250px; overflow: hidden; }
 .ad-slot.has-ad { min-height: 250px; }
 .ad-slot.ad-hidden { display: none !important; }
 
