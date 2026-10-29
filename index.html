@@ -237,7 +237,7 @@
             });
         }
 
-        var jsonFile = (typeof SITE_CONFIG !== 'undefined') ? SITE_CONFIG.jsonFile : 'technology-index.json';
+        var jsonFile = 'homepage-articles.json';
         fetch(jsonFile, { cache: 'no-cache' })
             .then(function(r) { return r.json(); })
             .then(function(data) {
@@ -326,7 +326,7 @@
                 var cls = i === 0 ? 'featured-main' : 'featured-side';
                 html += '<article class="featured-card ' + cls + '">' +
                     '<a href="' + buildArticleUrl(art.id) + '">' +
-                    '<img src="' + imgUrl + '" alt="' + esc(art.title) + '" loading="lazy" decoding="async" width="640" height="360" onerror="this.onerror=null;this.src=SITE_CONFIG.fallbackImage;">' +
+                    '<img src="' + imgUrl + '" alt="' + esc(art.title) + '" loading="' + (i === 0 ? 'eager' : 'lazy') + '" fetchpriority="' + (i === 0 ? 'high' : 'auto') + '" decoding="async" width="640" height="360" onerror="this.onerror=null;this.src=SITE_CONFIG.fallbackImage;">' +
                     '<span class="featured-cat">' + esc(art.category) + '</span>' +
                     '<h3>' + esc(art.title) + '</h3>' +
                     '<p>' + esc(art.excerpt || '') + '</p>' +
