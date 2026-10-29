@@ -1,4 +1,4 @@
-﻿const fs = require("fs");
+const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 
@@ -117,7 +117,7 @@ async function checkSource(url) {
 
     const response = await fetch(parsed, {
       method: "GET",
-      headers: { "User-Agent": "NextPixelEditorialBot/1.0" },
+      headers: { "User-Agent": "NewsantaraEditorialBot/1.0" },
       signal: AbortSignal.timeout(12000),
       redirect: "follow"
     });
@@ -188,7 +188,7 @@ async function main() {
         "Return valid JSON with title, category, subcategory, excerpt, content, sourceUrls."
       ]
     }),
-    "You are the lead editor of NextPixel. Produce accurate, restrained editorial content. Return JSON only."
+    "You are the lead editor of Newsantara. Produce accurate, restrained editorial content. Return JSON only."
   );
 
   const article = {

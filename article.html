@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="robots" content="noindex, follow">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="pageTitle">Article | NextPixel</title>
-    <meta name="description" id="metaDesc" content="Technology article from NextPixel.">
-    <link rel="canonical" id="canonicalUrl" href="https://tech.nextpixel.site/">
+    <title id="pageTitle">Article | Newsantara</title>
+    <meta name="description" id="metaDesc" content="Technology article from Newsantara.">
+    <link rel="canonical" id="canonicalUrl" href="https://newsantara.id/">
     <!-- OG -->
     <meta property="og:type" content="article">
-    <meta property="og:title" id="ogTitle" content="Article | NextPixel">
+    <meta property="og:title" id="ogTitle" content="Article | Newsantara">
     <meta property="og:description" id="ogDesc" content="">
-    <meta property="og:url" id="ogUrl" content="https://tech.nextpixel.site/">
-    <meta property="og:site_name" content="NextPixel">
+    <meta property="og:url" id="ogUrl" content="https://newsantara.id/">
+    <meta property="og:site_name" content="Newsantara">
     <meta property="og:image" id="ogImage" content="">
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -24,10 +25,10 @@
     <link rel="stylesheet" href="style.css">
     <!-- JSON-LD -->
     <script type="application/ld+json" id="jsonldArticle">
-    {"@context":"https://schema.org","@type":"Article","headline":"","datePublished":"","image":"","author":{"@type":"Organization","name":"NextPixel"},"publisher":{"@type":"Organization","name":"NextPixel"}}
+    {"@context":"https://schema.org","@type":"Article","headline":"","datePublished":"","image":"","author":{"@type":"Organization","name":"Newsantara"},"publisher":{"@type":"Organization","name":"Newsantara"}}
     </script>
     <script type="application/ld+json" id="jsonldBreadcrumb">
-    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Technology","item":"https://tech.nextpixel.site/"}]}
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Technology","item":"https://newsantara.id/"}]}
     </script>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <script src="/assets/nextpixel-ga4-config.js"></script>
@@ -37,7 +38,7 @@
     <!-- Header -->
     <header class="tech-header" id="siteHeader">
         <div class="header-inner">
-            <a href="/" class="tech-logo"><img src="/logo.svg" alt="NextPixel">
+            <a href="/" class="tech-logo"><img src="/logo.svg" alt="Newsantara">
             </a>
             <nav class="tech-nav" id="mainNav">
                 <a href="index.html?cat=ai">AI</a>
@@ -126,7 +127,7 @@
     <footer class="tech-footer">
         <div class="footer-inner">
             <div class="footer-brand">
-                <strong>NextPixel</strong>
+                <strong>Newsantara</strong>
                 <p>Editorial-grade technology coverage for the digital world.</p>
             </div>
             <div class="footer-col">
@@ -143,7 +144,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p><span class="dynamic-year"></span> NextPixel. All rights reserved.</p>
+            <p><span class="dynamic-year"></span> Newsantara. All rights reserved.</p>
             <a href="about.html">About</a>
             <a href="privacy.html">Privacy</a>
         </div>
@@ -175,7 +176,7 @@
         var jsonFile = (typeof SITE_CONFIG !== 'undefined') ? SITE_CONFIG.jsonFile : 'technology-index.json';
         var fullJsonFile = (typeof SITE_CONFIG !== 'undefined') ? SITE_CONFIG.fullArticleJson : 'articles-technology.json';
         var opinionFile = 'opinions.json';
-        var base = 'https://tech.nextpixel.site';
+        var base = 'https://newsantara.id';
 
         fetch(jsonFile)
             .then(function(r) {
@@ -262,7 +263,7 @@
             var articleUrl = base + '/article.html?id=' + encodeURIComponent(art.id);
 
             // Meta
-            var titleText = art.title + ' | NextPixel';
+            var titleText = art.title + ' | Newsantara';
             var descText = art.excerpt || art.title;
             document.title = titleText;
             document.getElementById('metaDesc').setAttribute('content', descText);
@@ -282,8 +283,8 @@
                 "datePublished": art.date,
                 "image": imgUrl,
                 "description": descText,
-                "author": { "@type": "Organization", "name": "NextPixel" },
-                "publisher": { "@type": "Organization", "name": "NextPixel" },
+                "author": { "@type": "Organization", "name": "Newsantara" },
+                "publisher": { "@type": "Organization", "name": "Newsantara" },
                 "mainEntityOfPage": { "@type": "WebPage", "@id": articleUrl }
             };
             document.getElementById('jsonldArticle').textContent = JSON.stringify(jsonld);

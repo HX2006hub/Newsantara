@@ -1,5 +1,5 @@
 /**
- * NextPixel — Site Configuration
+ * Newsantara — Site Configuration
  * Matrix-ready: change SITE_CONFIG to deploy a new vertical subsite.
  *
  * Shared template files (index.html, article.html, style.css) read this config.
@@ -8,13 +8,13 @@
 var SITE_CONFIG = {
     /* === Site Identity === */
     siteName: 'Technology',
-    fullSiteName: 'NextPixel',
+    fullSiteName: 'Newsantara',
     tagline: 'Technology Insights for the Digital World',
     aboutText: 'Editorial-grade coverage of AI, software, cybersecurity, gadgets and emerging technology.',
 
     /* === Domain & URLs === */
-    baseUrl: 'https://tech.nextpixel.site',
-    mainSiteUrl: 'https://nextpixel.site',
+    baseUrl: 'https://newsantara.id',
+    mainSiteUrl: 'https://newsantara.id',
     siblingSites: [],
 
     /* === Data Files === */
@@ -29,11 +29,11 @@ var SITE_CONFIG = {
     gaId: '',
 
     /* === SEO === */
-    titleSuffix: 'Technology Insights on AI, Software, Cybersecurity & Gadgets | NextPixel',
-    metaDesc: 'Editorial coverage of AI, software, cybersecurity, gadgets, developer tools and emerging technology from NextPixel.',
+    titleSuffix: 'Technology Insights on AI, Software, Cybersecurity & Gadgets | Newsantara',
+    metaDesc: 'Editorial coverage of AI, software, cybersecurity, gadgets, developer tools and emerging technology from Newsantara.',
 
     /* === Hero / Editorial === */
-    heroIntro: '<p>NextPixel covers the technologies reshaping how we work, build, and live &mdash; with reporting that cuts through vendor hype.</p><p>Our editors track artificial intelligence, software, cybersecurity, hardware, and the infrastructure behind modern computing. We focus on what changes, what it costs, and who it actually affects.</p>',
+    heroIntro: '<p>Newsantara covers the technologies reshaping how we work, build, and live &mdash; with reporting that cuts through vendor hype.</p><p>Our editors track artificial intelligence, software, cybersecurity, hardware, and the infrastructure behind modern computing. We focus on what changes, what it costs, and who it actually affects.</p>',
 
     /* === Category-specific Editorial Introductions === */
     categoryEditorial: {
