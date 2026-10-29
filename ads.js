@@ -309,6 +309,7 @@
   }
 
   function init() {
+    if (!C || C.enabled !== true) return;
     var items = pageItems();
     var gamItems = items.filter(function (item) {
       return isValid(item) && configFor(item).network === "gam";

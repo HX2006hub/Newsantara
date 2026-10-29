@@ -1,5 +1,5 @@
 /* ========================================
-   NextPixel - Global Styles
+   Newsantara - Global Styles
    v2: Editorial redesign, responsive header
    ======================================== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -573,9 +573,7 @@ html.category-view:not(.category-ready) .tech-hero {
     }
 }
 
-/* NextPixel layout consistency patch 2026 */
 
-/* NextPixel layout consistency patch 2026 */
 .container {
     max-width: 1280px;
     width: 100%;
@@ -940,7 +938,6 @@ html.category-view:not(.category-ready) .tech-hero {
     }
 }
 
-/* NextPixel compact homepage layout */
 .tech-hero {
     min-height: 0;
     padding: 42px 20px 34px;

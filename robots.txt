@@ -62,4 +62,4 @@ Disallow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://tech.nextpixel.site/sitemap.xml
+Sitemap: https://newsantara.id/sitemap.xml
