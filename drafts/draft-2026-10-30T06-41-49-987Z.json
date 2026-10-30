@@ -1,0 +1,7 @@
+{
+  "createdAt": "2026-10-30T06:41:49.988Z",
+  "status": "needs_human_review",
+  "reason": "自动任务异常：未配置 OPENAI_API_KEY",
+  "topic": null,
+  "article": null
+}
